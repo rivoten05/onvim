@@ -1,4 +1,19 @@
 return {
+	highlights = {
+		fill = {
+			bg = { attribute = "bg", highlight = "Normal" },
+		},
+		background = {
+			bg = { attribute = "bg", highlight = "Normal" },
+		},
+		buffer_visible = {
+			bg = { attribute = "bg", highlight = "Normal" },
+		},
+		-- This ensures the "offset" (the part above Neo-tree) also matches
+		offset_separator = {
+			bg = { attribute = "bg", highlight = "Normal" },
+		},
+	},
 	indicator = {
 		icon = "☕",
 		style = "icon",
