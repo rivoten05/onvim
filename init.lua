@@ -1,5 +1,3 @@
 require("core.lazys")
--- local colorify = require("nvchad.colorify")
--- colorify.run()
 require("configs.autocmds")
 require("configs.keymaps")
