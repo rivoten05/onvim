@@ -1,4 +1,5 @@
 local lazy_status = require("lazy.status")
+local icon = require("core.icons")
 
 local M = {}
 
@@ -31,7 +32,7 @@ M.active = {
 	lualine_c = {
 		{
 			"diagnostics",
-			symbols = { error = " ", warn = " ", info = " ", hint = " " },
+			symbols = { error = icon.Error, warn = icon.Warn, info = icon.Info, hint = icon.Hint },
 		},
 		{
 			"filetype",
