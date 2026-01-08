@@ -1,5 +1,3 @@
--- File: lua/core/conform.lua
-
 local M = {}
 
 M.setup = function()

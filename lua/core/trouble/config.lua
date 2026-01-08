@@ -1,5 +1,3 @@
--- File: lua/core/trouble/config.lua
-
 local M = {
 	focus = true,
 	auto_close = true,
