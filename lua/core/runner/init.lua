@@ -43,8 +43,14 @@ local function eval_buffer()
 	end
 
 	-- Run Lua code
-	local ok, result = pcall(load(chunk))
+	local func, err = load(chunk)
 
+	local ok, result
+	if func then
+		ok, result = pcall(func)
+	else
+		ok, result = false, err
+	end
 	-- Restore original print
 	print = old_print
 
