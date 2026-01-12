@@ -69,7 +69,12 @@ local function eval_buffer()
 	else
 		table.insert(output, "❌ Error: " .. result)
 	end
+	local start_time = vim.loop.hrtime()
+	local end_time = vim.loop.hrtime()
 
+	-- Calculate duration in milliseconds
+	local duration = (end_time - start_time) / 1e6
+	table.insert(output, string.format("⏱ Time: %.2fms", duration))
 	-- set lines in buf
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, output)
 end
