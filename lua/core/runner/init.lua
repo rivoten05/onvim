@@ -17,16 +17,21 @@ local function eval_buffer()
 	if buf == -1 then
 		buf = vim.api.nvim_create_buf(false, true)
 		vim.api.nvim_buf_set_name(buf, buf_name)
+		vim.api.nvim_buf_set_option(buf, "filetype", "lua")
 	end
 
 	-- if exists
-	local win = vim.fn.bufwinnr(buf)
-	if win == -1 then
-		vim.cmd("botright split")
-		vim.api.nvim_win_set_buf(0, buf)
-		vim.api.nvim_win_set_height(0, 10)
-	end
-
+	local width = math.ceil(vim.o.columns * 0.4)
+	local height = math.ceil(vim.o.lines * 0.5)
+	local _ = vim.api.nvim_open_win(buf, true, {
+		relative = "editor",
+		width = width,
+		height = height,
+		row = math.ceil((vim.o.lines - height) / 2),
+		col = math.ceil((vim.o.columns - width) / 2),
+		style = "minimal",
+		border = "rounded",
+	})
 	-- clear buf
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, {})
 
