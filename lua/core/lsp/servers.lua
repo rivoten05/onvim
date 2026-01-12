@@ -3,6 +3,7 @@ local M = {
 	"dartls",
 	"pyrefly",
 	"rust_analyzer",
+	"clangd",
 	"gopls",
 }
 
